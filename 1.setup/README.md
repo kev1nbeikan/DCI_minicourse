@@ -16,7 +16,7 @@
 
 При устновке выберите только `PostgreSQL Server`
 
-![setup_instruction.png](materials%5Csetup_instruction.png)
+![setup_instruction.png](materials/setup_instruction.png)
 
 
 
@@ -26,6 +26,6 @@
 
 Перейдите на [сайт загрузки](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
 
-![DataGrip download.png](materials%5CDataGrip%20download.png)
+![DataGrip download.png](materials/DataGrip_download.png)
 
 `Скачайте и установите самостоятельно, активировав пробный период.`K
