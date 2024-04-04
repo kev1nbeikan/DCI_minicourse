@@ -47,26 +47,21 @@ ALTER TABLE table_name
 
 Оператор INSERT INTO используется для вставки новых записей в таблицу.
 
-- Вы можете указывать кокретные столбцы, для которых собираетесь вставить данные
+1) Вы можете указывать кокретные столбцы, для которых собираетесь вставить данные
 
 ```sql
 INSERT INTO table_name (column1, column2, column3, ...)
 VALUES (value1, value2, value3, ...);
 ```
 
-- Или не перечислять столбцы, если собираетесь указать данные для всей строки
+2) Или не перечислять столбцы, если собираетесь указать данные для всей строки
 
 ```sql
 INSERT INTO table_name
 VALUES (value1, value2, value3, ...);
 ```
 
-```sql
-INSERT INTO table_name
-VALUES (value1, value2, value3, ...);
-```
-
-Оператор INSERT INTO SELECT используется для вставки новых записей в таблицу из другой таблицы
+3) Оператор INSERT INTO SELECT используется для вставки новых записей в таблицу из другой таблицы
 
 ```sql
 INSERT INTO table2
@@ -75,7 +70,7 @@ FROM table1
 WHERE condition;
 ```
 
-Можно выбирать конкретные поля, а также изменить их, например прибавить 1
+4) Можно выбирать конкретные поля c помощью вложеннго запроса, а также изменить их, например прибавить 1
 
 ```sql
 INSERT INTO table2 (column1, column2, column3, ...)
@@ -84,6 +79,17 @@ SELECT column1 + 1,
        column3,
 FROM table1
 WHERE condition;
+
+```
+
+5) Можно выбирать отдельно данные с помощью влоеженных запросов.
+   __Главное чтобы запрос возвращал одно значение, если это не так, то можно добавить _LIMIT___
+
+```sql
+INSERT INTO table1 (column1, column2, column3, ...)
+VALUES ((SELECT MAX(column1) FROM table1),
+        (SELECT column2 FROM table3 LIMIT 1),
+        (SELECT column3 FROM table4 LIMIT 1)) WHERE condition;
 
 ```
 
@@ -127,5 +133,11 @@ WHERE condition;
     - посмотрите какой id должен быть через
       __Database Explorer__ `alt + 2`
 
-4. Запустите все запросы
+4. Добавьте новую пиццу _'kai pizza'_ в меню у пиццерии _DoDo Pizzeria'и_ за 700, сделайте запрос похожий как в 5-ом
+   пунтке про
+   _INSERT_.
+   - Новое id записи в меню и id пиццерии подсчитывается с помощью вложенных запросов
+   - Запрос запишите [3.sql](3.sql)
+
+7. Запустите все запросы
 

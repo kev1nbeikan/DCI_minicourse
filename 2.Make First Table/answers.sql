@@ -27,3 +27,14 @@ create table pizzeria
 );
 -- << Создание таблицы pizzeria
 
+
+-- Добавление kai pizza in  DoDo pizzeria >>
+
+INSERT INTO menu(id, pizzeria_id, pizza_name, price)
+VALUES ((SELECT max(id) FROM menu) + 1,
+        (SELECT id FROM pizzeria WHERE pizzeria.name = 'DoDo Pizza'),
+        'kai pizza',
+        700)
+
+
+-- << Добавление kai pizza in  DoDo pizzeria
