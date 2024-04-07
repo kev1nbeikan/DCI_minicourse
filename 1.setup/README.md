@@ -81,7 +81,8 @@
 
 2. Выберите папку с курсом
 
-   #### path/to/course/_postgres_force_cource_
+   #### path/to/course/_postgres_cource_
+   > Разархивируйте курс, если он в __.zip__
 
 ### Подключите БД
 
